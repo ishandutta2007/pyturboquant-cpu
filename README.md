@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="pyturboquant-cpu Banner" width="100%" />
+</p>
+
 # pyturboquant-cpu
 
 CPU implementation of **TurboQuant**, a data-oblivious vector quantization algorithm for compressing high-dimensional vectors with near-optimal distortion.
