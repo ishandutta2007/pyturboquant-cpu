@@ -2,13 +2,25 @@
   <img src="assets/banner.svg" alt="pyturboquant-cpu Banner" width="100%" />
 </p>
 
-# pyturboquant-cpu
+# ⚡ pyturboquant-cpu
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://pypi.org/project/pyturboquant-cpu/"><img src="https://img.shields.io/pypi/v/pyturboquant-cpu.svg?color=blue" alt="PyPI version" /></a>
+  <a href="https://pypi.org/project/pyturboquant-cpu/"><img src="https://img.shields.io/pypi/pyversions/pyturboquant-cpu.svg" alt="Python Versions" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0" /></a>
+  <a href="https://arxiv.org/abs/2504.19874"><img src="https://img.shields.io/badge/arXiv-2504.19874-b31b1b.svg" alt="arXiv:2504.19874" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 CPU implementation of **TurboQuant**, a data-oblivious vector quantization algorithm for compressing high-dimensional vectors with near-optimal distortion.
 
 Based on the paper: [TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate](https://arxiv.org/abs/2504.19874) (Zandieh et al., ICLR 2026).
 
-## Installation
+---
+
+## 📦 Installation
 
 ```bash
 pip install pyturboquant-cpu
@@ -17,14 +29,14 @@ pip install pyturboquant-cpu
 For development:
 
 ```bash
-git clone https://github.com/pyturboquant/pyturboquant-cpu.git
+git clone https://github.com/ishandutta2007/pyturboquant-cpu.git
 cd pyturboquant-cpu
 pip install -e ".[dev]"
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
-### MSE-Optimal Quantization
+### 🎯 MSE-Optimal Quantization
 
 Minimizes mean-squared reconstruction error:
 
@@ -46,7 +58,7 @@ mse = np.mean(np.sum((vectors - reconstructed) ** 2, axis=1))
 print(f"MSE: {mse:.4f}")
 ```
 
-### Inner-Product-Optimal Quantization
+### 🔍 Inner-Product-Optimal Quantization
 
 Provides **unbiased** inner product estimates — essential for attention mechanisms and nearest-neighbor search:
 
@@ -64,15 +76,15 @@ approx_ip = reconstructed @ query
 print(f"Mean IP error: {np.mean(np.abs(true_ip - approx_ip)):.4f}")
 ```
 
-## How It Works
+## 🧠 How It Works
 
 TurboQuant is a **data-oblivious** algorithm — it requires no training data or calibration:
 
-1. **Random Rotation**: Input vectors are multiplied by a random orthogonal matrix, transforming coordinates to follow a known Beta distribution
-2. **Lloyd-Max Scalar Quantization**: Each coordinate is independently quantized using a precomputed optimal codebook for the Beta distribution
-3. **QJL Residual Correction** (Prod mode only): A 1-bit Quantized Johnson-Lindenstrauss sketch of the residual removes inner-product bias
+1. 🔄 **Random Rotation**: Input vectors are multiplied by a random orthogonal matrix, transforming coordinates to follow a known Beta distribution
+2. 📊 **Lloyd-Max Scalar Quantization**: Each coordinate is independently quantized using a precomputed optimal codebook for the Beta distribution
+3. 🛠️ **QJL Residual Correction** (Prod mode only): A 1-bit Quantized Johnson-Lindenstrauss sketch of the residual removes inner-product bias
 
-### Theoretical Distortion Bounds
+### 📐 Theoretical Distortion Bounds
 
 For unit vectors on S^{d-1}:
 
@@ -85,7 +97,7 @@ For unit vectors on S^{d-1}:
 
 These are within a factor of ~2.7× of the information-theoretic lower bound.
 
-## API Reference
+## 📚 API Reference
 
 ### `quantize_mse(vectors, bits, dim=None, seed=None)`
 
@@ -119,7 +131,7 @@ Reconstruct vectors from Prod quantization result.
 - **quantized**: `QuantizedProd` — output of `quantize_prod`
 - **Returns**: ndarray with same shape as original input
 
-## GPU Version
+## ⚡ GPU Version
 
 For GPU-accelerated quantization using PyTorch, see the companion package:
 
@@ -127,7 +139,11 @@ For GPU-accelerated quantization using PyTorch, see the companion package:
 pip install pyturboquant-gpu
 ```
 
-## Citation
+## 🌟 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/pyturboquant-cpu&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/pyturboquant-cpu&type=date&legend=top-left)
+
+## 📖 Citation
 
 ```bibtex
 @article{zandieh2025turboquant,
@@ -138,6 +154,6 @@ pip install pyturboquant-gpu
 }
 ```
 
-## License
+## 📄 License
 
 Apache 2.0
