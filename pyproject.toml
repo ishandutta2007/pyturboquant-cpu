@@ -44,10 +44,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pyturboquant/pyturboquant-cpu"
-Documentation = "https://github.com/pyturboquant/pyturboquant-cpu#readme"
-Repository = "https://github.com/pyturboquant/pyturboquant-cpu"
-Issues = "https://github.com/pyturboquant/pyturboquant-cpu/issues"
+Homepage = "https://github.com/ishandutta2007/pyturboquant-cpu"
+Documentation = "https://github.com/ishandutta2007/pyturboquant-cpu#readme"
+Repository = "https://github.com/ishandutta2007/pyturboquant-cpu"
+Issues = "https://github.com/ishandutta2007/pyturboquant-cpu/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
